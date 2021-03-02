@@ -7,9 +7,10 @@
  * @description  Inspired by tapjs (https://www.npmjs.com/package/tapjs)
  */
 
+import { Events } from '@yandeu/events'
+
 import { eventMatrix } from './eventMatrix'
 import { EventTypes } from './types'
-import { Events } from '@yandeu/events'
 import { VERSION } from './version'
 
 export type TapIsDragging = boolean

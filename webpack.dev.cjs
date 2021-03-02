@@ -4,6 +4,7 @@ const TerserPlugin = require('terser-webpack-plugin')
 module.exports = {
   mode: 'development',
   entry: './src/index.ts',
+  target: 'web',
   output: {
     filename: 'tap.dev.js',
     path: path.resolve(__dirname, 'umd'),
