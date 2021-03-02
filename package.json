@@ -1,9 +1,9 @@
 {
   "name": "@yandeu/tap",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Handling of user interactions such as mouse, touch and pointer events. (Inspired by tapjs)",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "author": "Yannick Deubel (https://github.com/yandeu)",
   "license": "MIT",
   "homepage": "https://github.com/yandeu/tap#readme",
