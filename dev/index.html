@@ -8,27 +8,48 @@
   </head>
   <body>
     <h1>Testing: Tap</h1>
-    <div id="box" style="background-color: navajowhite; width: 250px; height: 250px">box</div>
+    <div id="box" style="background-color: navajowhite; width: 250px; height: 250px; overflow: hidden">
+      <ul></ul>
+    </div>
 
     <script type="module">
       import '../umd/tap.dev.js'
 
-      console.log('Tap VERSION: ', Tap.VERSION)
-
       const box = document.getElementById('box')
+      const ul = box.firstElementChild
+
+      const logger = (...msg) => {
+        if (!msg) return
+
+        console.log(...msg)
+
+        msg = msg.map(m => {
+          console.log(typeof m)
+          if (typeof m === 'object') {
+            return JSON.stringify(m, null, 2)
+          }
+          return m
+        })
+
+        const li = document.createElement('li')
+        li.innerText = msg
+        ul.insertBefore(li, ul.firstElementChild)
+      }
+
+      logger('Tap VERSION: ', Tap.VERSION)
 
       const tap = new Tap(box)
 
       tap.on.down(({ position, event }) => {
-        console.log('Tap on box?', event.target === box)
+        logger('Tap on box?', event.path.includes(box))
       })
 
       tap.on.move(({ position, event, dragging }) => {
-        // console.log('dragging', position, dragging)
+        // logger('dragging', position, dragging)
       })
 
       tap.on.up(({ position, event }) => {
-        console.log('up:', position)
+        logger('up:', position)
       })
 
       // test destroy
@@ -38,7 +59,7 @@
 
       // test current and last position
       // setInterval(() => {
-      //   console.log(tap.currentPosition, tap.lastPosition)
+      //   logger(tap.currentPosition, tap.lastPosition)
       // }, 1000)
 
       // test pause and resume
