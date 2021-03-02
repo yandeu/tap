@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Testing: Tap</h1>
+    <div id="box" style="background-color: navajowhite; width: 250px; height: 250px">box</div>
+
+    <script type="module">
+      import '../umd/tap.dev.js'
+
+      console.log('Tap VERSION: ', Tap.VERSION)
+
+      const box = document.getElementById('box')
+
+      const tap = new Tap(box)
+
+      tap.on.down(({ position, event }) => {
+        console.log('Tap on box?', event.target === box)
+      })
+
+      tap.on.move(({ position, event, dragging }) => {
+        // console.log('dragging', position, dragging)
+      })
+
+      tap.on.up(({ position, event }) => {
+        console.log('up:', position)
+      })
+
+      // test destroy
+      // setTimeout(() => {
+      //   tap.destroy()
+      // }, 5000)
+
+      // test current and last position
+      // setInterval(() => {
+      //   console.log(tap.currentPosition, tap.lastPosition)
+      // }, 1000)
+
+      // test pause and resume
+      // setTimeout(() => {
+      //   tap.pause()
+      //   setTimeout(() => {
+      //     tap.resume()
+      //   }, 2000)
+      // }, 2000)
+    </script>
+  </body>
+</html>
