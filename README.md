@@ -1,4 +1,4 @@
-# Tap
+# 🖱️ Tap
 
 Handling of user interactions such as mouse, touch and pointer events.  
 (_Inspired by [tapjs](https://www.npmjs.com/package/tapjs)_)
