@@ -93,6 +93,10 @@ tap.resume()
 tap.destroy()
 ```
 
+## Questions?
+
+Join the [enable3d discussions](https://github.com/enable3d/enable3d/discussions)!
+
 ## License
 
 [MIT](LICENSE)
