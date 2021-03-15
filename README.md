@@ -93,6 +93,14 @@ tap.resume()
 tap.destroy()
 ```
 
+## Related Packages
+
+| Package                                          | Description                                                               |
+| ------------------------------------------------ | ------------------------------------------------------------------------- |
+| [`audio`](https://www.npmjs.com/package/@yandeu/audio)       | 🎵 Audio library for the Web Audio API.                                   |
+| [`keyboard`](https://www.npmjs.com/package/@yandeu/keyboard) | ⌨️ Handling of keyboard events.                                           |
+| [`tap`](https://www.npmjs.com/package/@yandeu/tap)           | 🖱️ Handling of user interactions such as mouse, touch and pointer events. |
+
 ## Questions?
 
 Join the [enable3d discussions](https://github.com/enable3d/enable3d/discussions)!
