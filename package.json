@@ -24,7 +24,7 @@
     "dev": "npm run prune && npm-run-all --parallel dev:*",
     "dev:webpack": "webpack --config webpack.dev.cjs --watch",
     "dev:server": "live-server --port=8085 --open=dev/index.html",
-    "prune": "rimraf lib cjs esm umd",
+    "prune": "npx rimraf lib cjs esm umd",
     "prepublishOnly": "npm run prune && npm run build"
   },
   "keywords": [
