@@ -277,12 +277,12 @@ export class Tap {
 
     if (this.active.touch && this.registered.touch && this.registered.pointer) {
       this._remove('pointer')
-      return false
+      if (e.type === 'pointerdown') return false
     }
 
     if (this.active.mouse && (this.registered.pointer || this.registered.touch)) {
       this._remove('mouse')
-      return false
+      if (e.type === 'mousedown') return false
     }
 
     return true
