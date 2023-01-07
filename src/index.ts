@@ -275,12 +275,12 @@ export class Tap {
     if (e.type === 'touchstart') this.registered.touch = true
     if (e.type === 'mousedown') this.registered.mouse = true
 
-    if (e.type === 'touchstart' && this.active.touch && this.registered.pointer) {
-      this._remove('touch')
+    if (this.active.touch && this.registered.touch && this.registered.pointer) {
+      this._remove('pointer')
       return false
     }
 
-    if (e.type === 'mousedown' && this.active.mouse && (this.registered.pointer || this.registered.touch)) {
+    if (this.active.mouse && (this.registered.pointer || this.registered.touch)) {
       this._remove('mouse')
       return false
     }
